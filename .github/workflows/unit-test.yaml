@@ -1,0 +1,16 @@
+name: Unit Tests
+on:
+  push:
+    branches:
+      - master
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - uses: setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'microsoft'
+          cache: 'maven'
+      - run: mvn clean verify

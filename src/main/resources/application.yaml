@@ -1,0 +1,28 @@
+quarkus:
+  application:
+    name: book-app
+  banner:
+    enabled: false
+  datasource:
+    db-kind: H2
+    jdbc:
+      url: jdbc:h2:mem:car-selling
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+  http:
+    cors:
+      ~: true
+      methods: GET, POST
+
+"dev":
+  quarkus:
+    http:
+      cors:
+        origin: /.*/
+    log:
+      level: DEBUG
+    smallrye-openapi:
+      info-title: Car Selling API
+      info-version: 1.0.0
+      info-contact-email: lonecalvary78.de@gmail.com

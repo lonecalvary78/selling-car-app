@@ -1,4 +1,5 @@
 name: Unit Tests
+run-name: unit-test
 on:
   push:
     branches:

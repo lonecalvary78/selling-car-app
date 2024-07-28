@@ -2,7 +2,7 @@ name: publish image to Github Container Registry
 on:
   workflow_run:
     types: [completed]
-    workflows: [unit-test]
+    workflows: [Unit Tests]
 jobs:
   build-and-pumblish-to-ghcr:
     runs-on: ubuntu-latest

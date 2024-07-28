@@ -26,3 +26,5 @@ quarkus:
       info-title: Car Selling API
       info-version: 1.0.0
       info-contact-email: lonecalvary78.de@gmail.com
+    swagger-ui:
+      always-include: true

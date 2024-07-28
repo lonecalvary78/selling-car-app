@@ -4,7 +4,7 @@ on:
     types: [completed]
     workflows: [Unit Tests]
 jobs:
-  build-and-pumblish-to-ghcr:
+  build-and-publish-image-to-ghcr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

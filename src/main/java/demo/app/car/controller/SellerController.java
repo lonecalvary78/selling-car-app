@@ -37,11 +37,11 @@ public class SellerController {
   @POST
   @Operation(description = "To create a new Seller profile")
   @APIResponses({
-    @APIResponse(responseCode = "201", description = "The profile of new Seller is successfully created", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
+    @APIResponse(responseCode = "200", description = "The profile of new Seller is successfully created", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
     @APIResponse(responseCode = "409", description = "The creation for new Seller profile is fail when the profile already created", content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(oneOf = ErrorDetailDTO.class)))
 
   })
-  public void newProfile(@Valid SellerDTO sellerDTO) throws DuplicateSellerException {
-      sellerService.createNewProfile(sellerDTO);
+  public SellerDTO newProfile(@Valid SellerDTO sellerDTO) throws DuplicateSellerException {
+      return sellerService.createNewProfile(sellerDTO);
   }
 }

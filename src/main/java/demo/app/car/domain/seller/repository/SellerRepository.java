@@ -20,12 +20,13 @@ public class SellerRepository {
   }
 
   @Transactional
-  public void createNewProfile(Seller seller) throws DuplicateSellerException {
+  public Seller createNewProfile(Seller seller) throws DuplicateSellerException {
     if (anyOtherSellerHasTheSameProfileWith(seller)) {
       throw new DuplicateSellerException();
     } else {
       entityManager.persist(seller);
     }
+    return seller;
   }
 
   private boolean anyOtherSellerHasTheSameProfileWith(Seller seller) {

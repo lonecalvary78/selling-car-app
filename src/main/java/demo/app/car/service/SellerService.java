@@ -19,8 +19,8 @@ public class SellerService {
     return SellerMapper.getInstance().fromEntity(sellerRepository.findById(sellerId));
   }
 
-  public void createNewProfile(SellerDTO sellerDTO) throws DuplicateSellerException {
+  public SellerDTO createNewProfile(SellerDTO sellerDTO) throws DuplicateSellerException {
      var seller = SellerMapper.getInstance().fromDTO(sellerDTO);
-     sellerRepository.createNewProfile(seller);
+     return SellerMapper.getInstance().fromEntity(sellerRepository.createNewProfile(seller));
   }
 }

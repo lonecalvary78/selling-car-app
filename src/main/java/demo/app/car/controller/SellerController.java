@@ -11,6 +11,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -30,6 +31,7 @@ public class SellerController {
     @APIResponse(responseCode = "200", description = "display the profile of the seller based on the given unique Id", content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(oneOf = SellerDTO.class))),
     @APIResponse(responseCode = "400", description = "Unable to get the profile of seller when the profile is not exist", content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(oneOf = ErrorDetailDTO.class)))
   })
+  @Produces(MediaType.APPLICATION_JSON)
   public SellerDTO findProfileById(@PathParam("sellerId") Long sellerId) throws NonExistingSellerException {
     return sellerService.findProfileById(sellerId);
   }
@@ -41,6 +43,7 @@ public class SellerController {
     @APIResponse(responseCode = "409", description = "The creation for new Seller profile is fail when the profile already created", content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(oneOf = ErrorDetailDTO.class)))
 
   })
+  @Produces(MediaType.APPLICATION_JSON)
   public SellerDTO newProfile(@Valid SellerDTO sellerDTO) throws DuplicateSellerException {
       return sellerService.createNewProfile(sellerDTO);
   }

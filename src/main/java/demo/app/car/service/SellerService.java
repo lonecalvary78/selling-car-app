@@ -8,8 +8,6 @@ import demo.app.car.model.SellerDTO;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-import java.util.Optional;
-
 @ApplicationScoped
 public class SellerService {
   @Inject
@@ -20,7 +18,7 @@ public class SellerService {
   }
 
   public SellerDTO createNewProfile(SellerDTO sellerDTO) throws DuplicateSellerException {
-     var seller = SellerMapper.getInstance().fromDTO(sellerDTO);
-     return SellerMapper.getInstance().fromEntity(sellerRepository.createNewProfile(seller));
+    var seller = SellerMapper.getInstance().fromDTO(sellerDTO);
+    return SellerMapper.getInstance().fromEntity(sellerRepository.createNewProfile(seller));
   }
 }

@@ -9,8 +9,11 @@ import lombok.Builder;
 import lombok.Data;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -20,11 +23,13 @@ import java.util.stream.Stream;
 
 @QuarkusTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class SellerRepositoryTest {
   @Inject
   SellerRepository sellerRepository;
 
   @Test
+  @Order(1)
   @DisplayName("Find the Seller profile by unique ID")
   void findProfileById() throws Exception {
     var sellerId = SecureRandom.getInstanceStrong().nextLong();
@@ -32,6 +37,7 @@ class SellerRepositoryTest {
   }
 
   @ParameterizedTest
+  @Order(2)
   @DisplayName("Create new Seller profile")
   @MethodSource("getTestCases")
   void createNewSellerProfile(TestCase testCase) {

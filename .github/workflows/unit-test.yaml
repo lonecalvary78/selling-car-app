@@ -5,6 +5,8 @@ on:
       - master
 jobs:
   unit-tests:
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,3 +20,12 @@ jobs:
         with:
           name: car-selling-app-test-artifact
           path: target/site
+      - uses: sonarsource/sonarcloud-github-action@v2
+        with:
+          args: >
+            -Dsonar.projectKey=lonecalvary78_selling-car-app
+            -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.sources=lib/
+            -Dsonar.test.exclusions=tests/**
+            -Dsonar.tests=tests/
+            -Dsonar.verbose=true

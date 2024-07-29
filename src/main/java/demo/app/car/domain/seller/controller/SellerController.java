@@ -1,10 +1,10 @@
-package demo.app.car.controller;
+package demo.app.car.domain.seller.controller;
 
 import demo.app.car.domain.seller.exception.DuplicateSellerException;
 import demo.app.car.domain.seller.exception.NonExistingSellerException;
 import demo.app.car.infra.exception.model.ErrorDetailDTO;
-import demo.app.car.model.SellerDTO;
-import demo.app.car.service.SellerService;
+import demo.app.car.domain.seller.model.SellerDTO;
+import demo.app.car.domain.seller.service.SellerService;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.GET;

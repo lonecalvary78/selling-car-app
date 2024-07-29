@@ -1,4 +1,4 @@
-package demo.app.car.health;
+package demo.app.car.infra.health;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.config.inject.ConfigProperty;

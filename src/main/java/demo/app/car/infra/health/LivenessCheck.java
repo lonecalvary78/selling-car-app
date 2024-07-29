@@ -1,4 +1,4 @@
-package demo.app.car.health;
+package demo.app.car.infra.health;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.HealthCheck;

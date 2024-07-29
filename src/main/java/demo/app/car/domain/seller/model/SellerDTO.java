@@ -1,4 +1,4 @@
-package demo.app.car.model;
+package demo.app.car.domain.seller.model;
 
 import jakarta.validation.constraints.NotBlank;
 

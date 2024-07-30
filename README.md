@@ -4,3 +4,9 @@
 
 ## Introduction
 This is the simple API for Selling Car
+
+## Getting Start
+For running the application in the local env, please run the maven command below on command shell you preferred
+```shell
+mvn quarkus:dev -Dquarkus.http.port=8080 -Dquarkus.profile=dev
+```

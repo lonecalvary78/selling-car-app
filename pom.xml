@@ -35,6 +35,11 @@
         <sonar.coverage.jacoco.xmlReportPaths>
             target/site/jacoco/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.exclusions>
+            **/model/**,
+            **/entity/**,
+            **/exception/**
+        </sonar.coverage.exclusions>
     </properties>
 
     <dependencyManagement>
@@ -171,6 +176,11 @@
                     <formats>
                         <format>XML</format>
                     </formats>
+                    <excludes>
+                        <exclude>**/model/**</exclude>
+                        <exclude>**/entity/**</exclude>
+                        <exclude>**/exception/**</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>

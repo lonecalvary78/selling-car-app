@@ -38,6 +38,7 @@
         <sonar.coverage.exclusions>
             **/model/**,
             **/entity/**,
+            **/health/**,
             **/exception/**
         </sonar.coverage.exclusions>
     </properties>

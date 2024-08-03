@@ -1,5 +1,6 @@
 package demo.app.car.domain.seller.repository;
 
+import demo.app.car.domain.seller.comment.test.model.TestCase;
 import demo.app.car.domain.seller.entity.Seller;
 import demo.app.car.domain.seller.exception.DuplicateSellerException;
 import demo.app.car.domain.seller.exception.NonExistingSellerException;
@@ -40,7 +41,7 @@ class SellerRepositoryTest {
   @Order(2)
   @DisplayName("Create new Seller profile")
   @MethodSource("getTestCases")
-  void createNewSellerProfile(TestCase testCase) {
+  void createNewSellerProfile(TestCase<Seller> testCase) {
     if(testCase != null) {
       var input = testCase.getInput();
       var isThrowException = testCase.isThrownException();
@@ -54,13 +55,11 @@ class SellerRepositoryTest {
     }
   }
 
-  private Stream<TestCase> getTestCases() {
-    return Arrays.asList(
-            TestCase.builder().input(newSeller("John","Doe","john.doe@gmail.com"))
-                    .isThrownException(false).thrownExceptionClass(null).build(),
-            TestCase.builder().input(newSeller("John","Doe","john.doe@gmail.com"))
-                    .isThrownException(true).thrownExceptionClass(DuplicateSellerException.class).build()
-    ).stream();
+  private Stream<TestCase<Seller>> getTestCases() {
+    return Stream.of(
+            ofTestCase(newSeller("John","Doe","john.doe@gmail.com"), false, null),
+            ofTestCase(newSeller("John","Doe","john.doe@gmail.com"), true, DuplicateSellerException.class)
+    );
   }
   private Seller newSeller(String firstName, String lastName, String email) {
     var seller = new Seller();
@@ -69,12 +68,8 @@ class SellerRepositoryTest {
     seller.setEmail(email);
     return seller;
   }
-}
 
-@Data
-@Builder
-class TestCase {
-  private Seller input;
-  private boolean isThrownException;
-  private Class thrownExceptionClass;
+  private TestCase<Seller> ofTestCase(Seller input, boolean isThrownException, Class thrownExceptionClass) {
+    return new TestCase<>(input, isThrownException, thrownExceptionClass);
+  }
 }

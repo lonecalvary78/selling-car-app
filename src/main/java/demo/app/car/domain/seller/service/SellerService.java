@@ -10,8 +10,12 @@ import jakarta.inject.Inject;
 
 @ApplicationScoped
 public class SellerService {
+  private final SellerRepository sellerRepository;
+
   @Inject
-  private SellerRepository sellerRepository;
+  public SellerService(SellerRepository sellerRepository) {
+    this.sellerRepository=sellerRepository;
+  }
 
   public SellerDTO findProfileById(Long sellerId) throws NonExistingSellerException {
     return SellerMapper.getInstance().fromEntity(sellerRepository.findById(sellerId));

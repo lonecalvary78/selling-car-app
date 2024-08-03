@@ -21,8 +21,13 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
 @Path("/sellers")
 public class SellerController {
+  private final SellerService sellerService;
+
   @Inject
-  private SellerService sellerService;
+  public SellerController(SellerService sellerService) {
+    this.sellerService=sellerService;
+  }
+
 
   @GET
   @Operation(description = "To retrieve detail of Seller profile based on the given unique Id")

@@ -40,6 +40,7 @@
             **/entity/**,
             **/health/**,
             **/exception/**
+            **/common/test/model/**
         </sonar.coverage.exclusions>
     </properties>
 

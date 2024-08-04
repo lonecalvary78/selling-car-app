@@ -21,6 +21,6 @@ public class SellerMapper {
   }
 
   public SellerDTO fromEntity(Seller seller) {
-    return SellerDTO.of(seller.getId(), seller.getFirstName(), seller.getLastName(), seller.getEmail());
+    return new SellerDTO(seller.getId(), seller.getFirstName(), seller.getLastName(), seller.getEmail());
   }
 }

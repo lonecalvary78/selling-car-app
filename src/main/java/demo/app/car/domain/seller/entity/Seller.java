@@ -24,7 +24,7 @@ public class Seller {
   OffsetDateTime lastModifiedAt;
 
   @PrePersist
-  void preDataPresist() {
+  void beforeSave() {
     if (getId() == null) {
       setCreatedAt(OffsetDateTime.now(ZoneId.systemDefault()));
     } else {

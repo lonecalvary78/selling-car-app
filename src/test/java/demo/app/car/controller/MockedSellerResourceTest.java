@@ -1,6 +1,6 @@
 package demo.app.car.controller;
 
-import demo.app.car.domain.seller.controller.SellerController;
+import demo.app.car.domain.seller.resource.SellerResource;
 import demo.app.car.domain.seller.exception.DuplicateSellerException;
 import demo.app.car.domain.seller.exception.NonExistingSellerException;
 import demo.app.car.domain.seller.model.SellerDTO;
@@ -17,9 +17,9 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class MockedSellerControllerTest {
+class MockedSellerResourceTest {
   @InjectMocks
-  SellerController sellerController;
+  SellerResource sellerResource;
 
   @Mock
   SellerService sellerService;
@@ -30,8 +30,8 @@ class MockedSellerControllerTest {
     var sellerId = 1L;
     when(sellerService.findProfileById(any())).thenReturn(newDummySellerDTO());
     Assertions.assertAll(
-            ()->Assertions.assertDoesNotThrow(()->sellerController.findProfileById(sellerId)),
-            ()->Assertions.assertNotNull(sellerController.findProfileById(sellerId))
+            ()->Assertions.assertDoesNotThrow(()-> sellerResource.findProfileById(sellerId)),
+            ()->Assertions.assertNotNull(sellerResource.findProfileById(sellerId))
     );
     verify(sellerService, times(2)).findProfileById(any());
   }
@@ -41,7 +41,7 @@ class MockedSellerControllerTest {
   void createNewSellerProfile() throws DuplicateSellerException {
     var sellerDTO = new SellerDTO(null,"John","Doe", "john.doe@testmail.com");
     when(sellerService.createNewProfile(any())).thenReturn(newDummySellerDTO());
-    Assertions.assertDoesNotThrow(()->sellerController.newProfile(sellerDTO));
+    Assertions.assertDoesNotThrow(()-> sellerResource.newProfile(sellerDTO));
     verify(sellerService).createNewProfile(any());
   }
 

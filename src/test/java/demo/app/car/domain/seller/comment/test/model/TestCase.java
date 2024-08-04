@@ -1,10 +1,7 @@
 package demo.app.car.domain.seller.comment.test.model;
 
-import demo.app.car.domain.seller.entity.Seller;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 @RequiredArgsConstructor
 @Getter

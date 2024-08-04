@@ -1,10 +1,12 @@
-package demo.app.car.domain.seller.controller;
+package demo.app.car.domain.seller.resource;
 
 import demo.app.car.domain.seller.exception.DuplicateSellerException;
 import demo.app.car.domain.seller.exception.NonExistingSellerException;
 import demo.app.car.infra.exception.model.ErrorDetailDTO;
 import demo.app.car.domain.seller.model.SellerDTO;
 import demo.app.car.domain.seller.service.SellerService;
+import io.micrometer.core.annotation.Counted;
+import io.micrometer.core.annotation.Timed;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.GET;
@@ -20,11 +22,11 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
 @Path("/sellers")
-public class SellerController {
+public class SellerResource {
   private final SellerService sellerService;
 
   @Inject
-  public SellerController(SellerService sellerService) {
+  public SellerResource(SellerService sellerService) {
     this.sellerService=sellerService;
   }
 
@@ -37,6 +39,8 @@ public class SellerController {
     @APIResponse(responseCode = "400", description = "Unable to get the profile of seller when the profile is not exist", content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(oneOf = ErrorDetailDTO.class)))
   })
   @Produces(MediaType.APPLICATION_JSON)
+  @Counted("findProfileById")
+  @Timed("findProfileById")
   public SellerDTO findProfileById(@PathParam("sellerId") Long sellerId) throws NonExistingSellerException {
     return sellerService.findProfileById(sellerId);
   }
@@ -49,6 +53,8 @@ public class SellerController {
 
   })
   @Produces(MediaType.APPLICATION_JSON)
+  @Counted("newProfile")
+  @Timed("newProfile")
   public SellerDTO newProfile(@Valid SellerDTO sellerDTO) throws DuplicateSellerException {
       return sellerService.createNewProfile(sellerDTO);
   }

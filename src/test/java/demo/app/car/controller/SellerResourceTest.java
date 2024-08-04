@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 
 @QuarkusTest
-class SellerControllerTest {
+class SellerResourceTest {
    @Test
    @DisplayName("Find the Seller profile by unique ID")
    void findProfileById() {

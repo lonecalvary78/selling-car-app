@@ -1,8 +1,9 @@
 name: publish-image-to-gcp
 on:
   workflow_run:
-    types: [completed]
-    workflows: [unit-test]
+    workflows: [Unit Tests]
+    types:
+      - completed
 permissions:
   contents: read
   id-token: write

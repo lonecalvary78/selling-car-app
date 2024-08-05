@@ -11,7 +11,7 @@ permissions:
 jobs:
   publish-image-to-gcp:
     env:
-      region: 'asia-southeast2'
+      region: 'asia-southeast1'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,4 +34,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.region }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/docker-repo/book-app:latest
+          tags: ${{ env.region }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/docker-sg/book-app:latest

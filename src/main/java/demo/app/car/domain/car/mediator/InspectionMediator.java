@@ -1,6 +1,8 @@
 package demo.app.car.domain.car.mediator;
 
 import demo.app.car.domain.car.model.CarSellingRequestDTO;
+import demo.app.car.domain.inspector.model.CarDetailDTO;
+import demo.app.car.domain.inspector.model.InspectionRequestDTO;
 import demo.app.car.domain.inspector.service.InspectionService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -15,6 +17,10 @@ public class InspectionMediator {
   }
 
   public void submitCarProfileForNewInspection(CarSellingRequestDTO carSellingRequestDTO) {
-    //Create new inspector
+    var inspectionRequestDTO = new InspectionRequestDTO(
+            carSellingRequestDTO.sellerId(),
+            CarDetailDTO.of(carSellingRequestDTO.brand(), carSellingRequestDTO.model(), carSellingRequestDTO.variant(), carSellingRequestDTO.transmission(), carSellingRequestDTO.yearOfCarManufactured(), carSellingRequestDTO.mileage())
+    );
+    inspectionService.createNewInspection(inspectionRequestDTO);
   }
 }

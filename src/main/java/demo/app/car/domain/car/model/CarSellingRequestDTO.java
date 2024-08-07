@@ -6,6 +6,7 @@ public record CarSellingRequestDTO(
    String model,
    String variant,
    String transmission,
-   String yearOfCarManufactured
+   int yearOfCarManufactured,
+   int mileage
 ) {
 }

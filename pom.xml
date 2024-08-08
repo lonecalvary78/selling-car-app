@@ -29,7 +29,7 @@
         <maven.jacoco-plugin.version>0.8.12</maven.jacoco-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.group-id>io.quarkus</quarkus.group-id>
-        <quarkus.version>3.13.0</quarkus.version>
+        <quarkus.version>3.13.1</quarkus.version>
         <lombok.version>1.18.34</lombok.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <sonar.organization>lonecalvary78</sonar.organization>

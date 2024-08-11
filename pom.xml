@@ -27,6 +27,7 @@
         <maven.surefire-plugin.version>3.2.2</maven.surefire-plugin.version>
         <maven.spotbugs-plugin.version>4.8.6.2</maven.spotbugs-plugin.version>
         <maven.jacoco-plugin.version>0.8.12</maven.jacoco-plugin.version>
+        <maven.rewrite-plugin.version>5.38.1</maven.rewrite-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.group-id>io.quarkus</quarkus.group-id>
         <quarkus.version>3.13.1</quarkus.version>
@@ -85,7 +86,7 @@
         </dependency>
         <dependency>
             <groupId>${quarkus.group-id}</groupId>
-            <artifactId>quarkus-jdbc-h2</artifactId>
+            <artifactId>quarkus-jdbc-postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -218,6 +219,18 @@
                         <exclude>**/entity/**</exclude>
                         <exclude>**/exception/**</exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>${maven.rewrite-plugin.version}</version>
+                <configuration>
+                    <activeRecipes>
+                        <recipe>org.openrewrite.java.OrderImports</recipe>
+                        <recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
+                        <recipe>org.openrewrite.java.ShortenFullyQualifiedTypeReferences</recipe>
+                    </activeRecipes>
                 </configuration>
             </plugin>
         </plugins>

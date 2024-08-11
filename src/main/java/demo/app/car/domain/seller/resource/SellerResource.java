@@ -2,9 +2,9 @@ package demo.app.car.domain.seller.resource;
 
 import demo.app.car.domain.seller.exception.DuplicateSellerException;
 import demo.app.car.domain.seller.exception.NonExistingSellerException;
-import demo.app.car.infra.exception.model.ErrorDetailDTO;
 import demo.app.car.domain.seller.model.SellerDTO;
 import demo.app.car.domain.seller.service.SellerService;
+import demo.app.car.infra.exception.model.ErrorDetailDTO;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import jakarta.inject.Inject;

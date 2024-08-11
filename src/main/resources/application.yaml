@@ -3,16 +3,20 @@ quarkus:
     name: book-app
   banner:
     enabled: false
+  datasource:
+    db-kind: postgresql
 
 "%dev":
   quarkus:
     datasource:
-      db-kind: H2
       jdbc:
-        url: jdbc:h2:mem:car-selling
+        url: jdbc:postgres://localhost:5432/postgres
+      username: postgres
+      password: postgres
     hibernate-orm:
       database:
         generation: update
+      multitenant: car-selling
     http:
       cors:
         ~: true

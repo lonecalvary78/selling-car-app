@@ -86,7 +86,7 @@
         </dependency>
         <dependency>
             <groupId>${quarkus.group-id}</groupId>
-            <artifactId>quarkus-jdbc-h2</artifactId>
+            <artifactId>quarkus-jdbc-postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

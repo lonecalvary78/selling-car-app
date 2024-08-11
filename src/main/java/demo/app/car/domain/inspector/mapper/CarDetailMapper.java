@@ -20,4 +20,14 @@ public interface CarDetailMapper {
     @Mapping(source="mileage", target = "mileage")
   })
   CarDetail fromPayload(CarDetailDTO carDetailDTO);
+
+  @Mappings({
+          @Mapping(source="brand", target="brand"),
+          @Mapping(source="model", target="model"),
+          @Mapping(source="variant", target="variant"),
+          @Mapping(source="transmission", target="transmission"),
+          @Mapping(source="yearOfCarManufactured", target="yearOfCarManufactured"),
+          @Mapping(source="mileage", target = "mileage")
+  })
+  CarDetailDTO fromEntity(CarDetail carDetail);
 }

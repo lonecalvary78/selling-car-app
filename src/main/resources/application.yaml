@@ -8,15 +8,9 @@ quarkus:
 
 "%dev":
   quarkus:
-    datasource:
-      jdbc:
-        url: jdbc:postgres://localhost:5432/postgres
-      username: postgres
-      password: postgres
     hibernate-orm:
       database:
         generation: update
-      multitenant: car-selling
     http:
       cors:
         ~: true

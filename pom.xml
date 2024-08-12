@@ -78,6 +78,10 @@
         </dependency>
         <dependency>
             <groupId>${quarkus.group-id}</groupId>
+            <artifactId>quarkus-smallrye-jwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${quarkus.group-id}</groupId>
             <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
         </dependency>
         <dependency>
@@ -227,9 +231,9 @@
                 <version>${maven.rewrite-plugin.version}</version>
                 <configuration>
                     <activeRecipes>
+                        <recipe>org.openrewrite.java.ShortenFullyQualifiedTypeReferences</recipe>
                         <recipe>org.openrewrite.java.OrderImports</recipe>
                         <recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
-                        <recipe>org.openrewrite.java.ShortenFullyQualifiedTypeReferences</recipe>
                     </activeRecipes>
                 </configuration>
             </plugin>

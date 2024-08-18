@@ -1,7 +1,7 @@
 package demo.app.car.infra.exception.seller.handler;
 
-import demo.app.car.infra.exception.seller.DuplicateSellerException;
 import demo.app.car.infra.exception.common.handler.GenericApplicationErrorHandler;
+import demo.app.car.infra.exception.seller.DuplicateSellerException;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.Provider;
 

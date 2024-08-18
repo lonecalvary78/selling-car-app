@@ -2,9 +2,9 @@ package demo.app.car.domain.seller.service;
 
 import demo.app.car.application.seller.SellerService;
 import demo.app.car.domain.seller.entity.Seller;
+import demo.app.car.domain.seller.model.SellerDTO;
 import demo.app.car.infra.exception.seller.DuplicateSellerException;
 import demo.app.car.infra.exception.seller.NonExistingSellerException;
-import demo.app.car.domain.seller.model.SellerDTO;
 import demo.app.car.infra.repository.seller.SellerRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

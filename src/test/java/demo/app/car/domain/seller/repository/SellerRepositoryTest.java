@@ -7,8 +7,6 @@ import demo.app.car.infra.exception.seller.NonExistingSellerException;
 import demo.app.car.infra.repository.seller.SellerRepository;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
-import java.security.SecureRandom;
-import java.util.stream.Stream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
@@ -18,6 +16,9 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import java.security.SecureRandom;
+import java.util.stream.Stream;
 
 @QuarkusTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

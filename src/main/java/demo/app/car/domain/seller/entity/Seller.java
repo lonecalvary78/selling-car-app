@@ -1,24 +1,30 @@
 package demo.app.car.domain.seller.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Column;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.PrePersist;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
+import jakarta.persistence.Table;
 import lombok.Data;
 
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+
 @Entity
-@NamedQuery(name = "countSellerWhoHasTheSameProfileWith", query = "SELECT count(1) FROM Seller seller WHERE seller.firstName=:firstName AND lastName=:lastName AND email=:email")
+@Table(schema="sellers")
+@NamedQuery(name = "countSellerWhoHasTheSameProfileWith", query = "SELECT count(seller) FROM Seller seller WHERE seller.firstName=:firstName AND seller.lastName=:lastName AND seller.email=:email")
 @Data
 public class Seller {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue
   private Long id;
+
+  @Column(name = "first_name")
   private String firstName;
+
+  @Column(name = "last_name")
   private String lastName;
   private String email;
 

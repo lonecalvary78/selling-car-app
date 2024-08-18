@@ -8,9 +8,11 @@ quarkus:
 
 "%dev":
   quarkus:
+    flyway:
+      migrate-at-start: true
     hibernate-orm:
       database:
-        generation: update
+        generation: none
     http:
       cors:
         ~: true
@@ -23,3 +25,22 @@ quarkus:
       info-version: 1.0.0
       info-contact-name: Gunardy Sutanto
 
+
+"%test":
+  quarkus:
+    flyway:
+      migrate-at-start: true
+    hibernate-orm:
+      database:
+        generation: none
+    http:
+      cors:
+        ~: true
+        methods: GET, POST
+        origin: /.*/
+    log:
+      level: INFO
+    smallrye-openapi:
+      info-title: Car Selling API
+      info-version: 1.0.0
+      info-contact-name: Gunardy Sutanto

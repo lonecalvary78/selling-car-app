@@ -1,9 +1,9 @@
-package demo.app.car.ui;
+package demo.app.car.ui.seller;
 
 import demo.app.car.infra.exception.seller.DuplicateSellerException;
 import demo.app.car.infra.exception.seller.NonExistingSellerException;
 import demo.app.car.domain.seller.model.SellerDTO;
-import demo.app.car.application.SellerService;
+import demo.app.car.application.seller.SellerService;
 import demo.app.car.infra.exception.common.model.ErrorDetailDTO;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;

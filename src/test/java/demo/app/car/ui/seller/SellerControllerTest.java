@@ -1,4 +1,4 @@
-package demo.app.car.ui;
+package demo.app.car.ui.seller;
 
 import demo.app.car.domain.seller.model.SellerDTO;
 import io.quarkus.test.junit.QuarkusTest;

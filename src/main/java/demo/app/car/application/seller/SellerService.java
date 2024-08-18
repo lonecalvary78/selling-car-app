@@ -1,4 +1,4 @@
-package demo.app.car.application;
+package demo.app.car.application.seller;
 
 import demo.app.car.infra.exception.seller.DuplicateSellerException;
 import demo.app.car.infra.exception.seller.NonExistingSellerException;

@@ -1,6 +1,6 @@
 package demo.app.car.domain.seller.service;
 
-import demo.app.car.application.SellerService;
+import demo.app.car.application.seller.SellerService;
 import demo.app.car.domain.seller.entity.Seller;
 import demo.app.car.infra.exception.seller.DuplicateSellerException;
 import demo.app.car.infra.exception.seller.NonExistingSellerException;

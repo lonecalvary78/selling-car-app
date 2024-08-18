@@ -1,7 +1,7 @@
-package demo.app.car.domain.seller.exception.handler;
+package demo.app.car.infra.exception.seller.handler;
 
-import demo.app.car.domain.seller.exception.NonExistingSellerException;
-import demo.app.car.infra.exception.handler.GenericApplicationErrorHandler;
+import demo.app.car.infra.exception.seller.NonExistingSellerException;
+import demo.app.car.infra.exception.common.handler.GenericApplicationErrorHandler;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.Provider;
 

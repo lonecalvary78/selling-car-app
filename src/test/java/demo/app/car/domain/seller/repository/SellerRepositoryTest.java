@@ -2,8 +2,9 @@ package demo.app.car.domain.seller.repository;
 
 import demo.app.car.domain.seller.comment.test.model.TestCase;
 import demo.app.car.domain.seller.entity.Seller;
-import demo.app.car.domain.seller.exception.DuplicateSellerException;
-import demo.app.car.domain.seller.exception.NonExistingSellerException;
+import demo.app.car.infra.exception.seller.DuplicateSellerException;
+import demo.app.car.infra.exception.seller.NonExistingSellerException;
+import demo.app.car.infra.repository.seller.SellerRepository;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import java.security.SecureRandom;

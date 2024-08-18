@@ -1,9 +1,11 @@
 package demo.app.car.domain.seller.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.PrePersist;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
@@ -14,14 +16,17 @@ import lombok.Data;
 @Data
 public class Seller {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String firstName;
   private String lastName;
   private String email;
 
-  OffsetDateTime createdAt;
-  OffsetDateTime lastModifiedAt;
+  @Column(name="created_at")
+  private OffsetDateTime createdAt;
+
+  @Column(name="last_modified_at")
+  private OffsetDateTime lastModifiedAt;
 
   @PrePersist
   void beforeSave() {

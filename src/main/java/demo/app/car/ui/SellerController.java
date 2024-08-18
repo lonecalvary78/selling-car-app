@@ -1,10 +1,10 @@
-package demo.app.car.domain.seller.resource;
+package demo.app.car.ui;
 
-import demo.app.car.domain.seller.exception.DuplicateSellerException;
-import demo.app.car.domain.seller.exception.NonExistingSellerException;
+import demo.app.car.infra.exception.seller.DuplicateSellerException;
+import demo.app.car.infra.exception.seller.NonExistingSellerException;
 import demo.app.car.domain.seller.model.SellerDTO;
-import demo.app.car.domain.seller.service.SellerService;
-import demo.app.car.infra.exception.model.ErrorDetailDTO;
+import demo.app.car.application.SellerService;
+import demo.app.car.infra.exception.common.model.ErrorDetailDTO;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import jakarta.inject.Inject;
@@ -22,11 +22,11 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
 @Path("/sellers")
-public class SellerResource {
+public class SellerController {
   private final SellerService sellerService;
 
   @Inject
-  public SellerResource(SellerService sellerService) {
+  public SellerController(SellerService sellerService) {
     this.sellerService=sellerService;
   }
 

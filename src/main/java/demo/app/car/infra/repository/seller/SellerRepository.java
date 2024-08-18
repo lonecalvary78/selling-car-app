@@ -1,8 +1,8 @@
-package demo.app.car.domain.seller.repository;
+package demo.app.car.infra.repository.seller;
 
 import demo.app.car.domain.seller.entity.Seller;
-import demo.app.car.domain.seller.exception.DuplicateSellerException;
-import demo.app.car.domain.seller.exception.NonExistingSellerException;
+import demo.app.car.infra.exception.seller.DuplicateSellerException;
+import demo.app.car.infra.exception.seller.NonExistingSellerException;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;

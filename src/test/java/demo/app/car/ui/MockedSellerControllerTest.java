@@ -1,10 +1,9 @@
-package demo.app.car.controller;
+package demo.app.car.ui;
 
-import demo.app.car.domain.seller.exception.DuplicateSellerException;
-import demo.app.car.domain.seller.exception.NonExistingSellerException;
+import demo.app.car.infra.exception.seller.DuplicateSellerException;
+import demo.app.car.infra.exception.seller.NonExistingSellerException;
 import demo.app.car.domain.seller.model.SellerDTO;
-import demo.app.car.domain.seller.resource.SellerResource;
-import demo.app.car.domain.seller.service.SellerService;
+import demo.app.car.application.SellerService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,9 +16,9 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class MockedSellerResourceTest {
+class MockedSellerControllerTest {
   @InjectMocks
-  SellerResource sellerResource;
+  SellerController sellerController;
 
   @Mock
   SellerService sellerService;
@@ -30,8 +29,8 @@ class MockedSellerResourceTest {
     var sellerId = 1L;
     when(sellerService.findProfileById(any())).thenReturn(newDummySellerDTO());
     Assertions.assertAll(
-            ()->Assertions.assertDoesNotThrow(()-> sellerResource.findProfileById(sellerId)),
-            ()->Assertions.assertNotNull(sellerResource.findProfileById(sellerId))
+            ()->Assertions.assertDoesNotThrow(()-> sellerController.findProfileById(sellerId)),
+            ()->Assertions.assertNotNull(sellerController.findProfileById(sellerId))
     );
     verify(sellerService, times(2)).findProfileById(any());
   }
@@ -41,7 +40,7 @@ class MockedSellerResourceTest {
   void createNewSellerProfile() throws DuplicateSellerException {
     var sellerDTO = new SellerDTO(null,"John","Doe", "john.doe@testmail.com");
     when(sellerService.createNewProfile(any())).thenReturn(newDummySellerDTO());
-    Assertions.assertDoesNotThrow(()-> sellerResource.newProfile(sellerDTO));
+    Assertions.assertDoesNotThrow(()-> sellerController.newProfile(sellerDTO));
     verify(sellerService).createNewProfile(any());
   }
 

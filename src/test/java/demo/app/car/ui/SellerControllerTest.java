@@ -1,4 +1,4 @@
-package demo.app.car.controller;
+package demo.app.car.ui;
 
 import demo.app.car.domain.seller.model.SellerDTO;
 import io.quarkus.test.junit.QuarkusTest;
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 
 @QuarkusTest
-class SellerResourceTest {
+class SellerControllerTest {
    @Test
    @DisplayName("Find the Seller profile by unique ID")
    void findProfileById() {

@@ -1,4 +1,4 @@
-package demo.app.car.domain.seller.mapper;
+package demo.app.car.infra.mapper.seller;
 
 import demo.app.car.domain.seller.entity.Seller;
 import demo.app.car.domain.seller.model.SellerDTO;

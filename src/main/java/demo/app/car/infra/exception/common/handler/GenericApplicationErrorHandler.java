@@ -1,6 +1,6 @@
-package demo.app.car.infra.exception.handler;
+package demo.app.car.infra.exception.common.handler;
 
-import demo.app.car.infra.exception.model.ErrorDetailDTO;
+import demo.app.car.infra.exception.common.model.ErrorDetailDTO;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 

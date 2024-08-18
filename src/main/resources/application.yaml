@@ -17,7 +17,7 @@ quarkus:
         methods: GET, POST
         origin: /.*/
     log:
-      level: DEBUG
+      level: INFO
     smallrye-openapi:
       info-title: Car Selling API
       info-version: 1.0.0

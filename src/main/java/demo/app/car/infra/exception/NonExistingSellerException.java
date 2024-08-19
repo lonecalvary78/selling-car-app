@@ -1,4 +1,4 @@
-package demo.app.car.infra.exception.seller;
+package demo.app.car.infra.exception;
 
 public class NonExistingSellerException extends Exception {
   public NonExistingSellerException() {

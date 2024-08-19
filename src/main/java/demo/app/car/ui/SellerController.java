@@ -1,10 +1,10 @@
-package demo.app.car.ui.seller;
+package demo.app.car.ui;
 
-import demo.app.car.application.seller.SellerService;
-import demo.app.car.domain.seller.model.SellerDTO;
-import demo.app.car.infra.exception.common.model.ErrorDetailDTO;
-import demo.app.car.infra.exception.seller.DuplicateSellerException;
-import demo.app.car.infra.exception.seller.NonExistingSellerException;
+import demo.app.car.application.SellerService;
+import demo.app.car.model.SellerDTO;
+import demo.app.car.model.error.ErrorDetailDTO;
+import demo.app.car.infra.exception.DuplicateSellerException;
+import demo.app.car.infra.exception.NonExistingSellerException;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import jakarta.inject.Inject;

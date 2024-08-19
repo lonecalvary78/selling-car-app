@@ -1,7 +1,7 @@
-package demo.app.car.infra.mapper.seller;
+package demo.app.car.infra.mapper;
 
 import demo.app.car.domain.seller.entity.Seller;
-import demo.app.car.domain.seller.model.SellerDTO;
+import demo.app.car.model.SellerDTO;
 import lombok.Getter;
 
 public class SellerMapper {

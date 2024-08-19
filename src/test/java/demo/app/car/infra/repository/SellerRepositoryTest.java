@@ -1,10 +1,9 @@
-package demo.app.car.domain.seller.repository;
+package demo.app.car.infra.repository;
 
-import demo.app.car.domain.seller.comment.test.model.TestCase;
+import demo.app.car.test.common.model.TestCase;
 import demo.app.car.domain.seller.entity.Seller;
-import demo.app.car.infra.exception.seller.DuplicateSellerException;
-import demo.app.car.infra.exception.seller.NonExistingSellerException;
-import demo.app.car.infra.repository.seller.SellerRepository;
+import demo.app.car.infra.exception.DuplicateSellerException;
+import demo.app.car.infra.exception.NonExistingSellerException;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Assertions;

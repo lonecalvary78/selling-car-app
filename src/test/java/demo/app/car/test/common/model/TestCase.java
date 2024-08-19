@@ -1,4 +1,4 @@
-package demo.app.car.domain.seller.comment.test.model;
+package demo.app.car.test.common.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package demo.app.car.infra.exception.seller;
+package demo.app.car.infra.exception;
 
 public class DuplicateSellerException extends Exception {
   public DuplicateSellerException() {

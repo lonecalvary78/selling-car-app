@@ -1,4 +1,4 @@
-package demo.app.car.domain.seller.model;
+package demo.app.car.model;
 
 import jakarta.json.bind.annotation.JsonbPropertyOrder;
 import jakarta.validation.constraints.NotBlank;

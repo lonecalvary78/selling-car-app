@@ -1,6 +1,6 @@
-package demo.app.car.ui.seller;
+package demo.app.car.ui;
 
-import demo.app.car.domain.seller.model.SellerDTO;
+import demo.app.car.model.SellerDTO;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package demo.app.car.infra.exception.common.model;
+package demo.app.car.model.error;
 
 import jakarta.json.bind.annotation.JsonbPropertyOrder;
 

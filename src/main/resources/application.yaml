@@ -25,7 +25,6 @@ quarkus:
       info-version: 1.0.0
       info-contact-name: Gunardy Sutanto
 
-
 "%test":
   quarkus:
     flyway:

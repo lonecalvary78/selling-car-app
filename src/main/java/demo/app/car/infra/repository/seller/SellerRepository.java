@@ -12,12 +12,8 @@ import java.util.Optional;
 
 @ApplicationScoped
 public class SellerRepository {
-  private EntityManager entityManager;
-
   @Inject
-  public SellerRepository(EntityManager entityManager) {
-    this.entityManager = entityManager;
-  }
+  private EntityManager entityManager;
 
   public Seller findById(Long sellerId) throws NonExistingSellerException {
     return Optional.ofNullable(entityManager.find(Seller.class, sellerId)).orElseThrow(NonExistingSellerException::new);

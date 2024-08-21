@@ -1,10 +1,10 @@
 package demo.app.car.application;
 
-import demo.app.car.model.SellerDTO;
 import demo.app.car.infra.exception.DuplicateSellerException;
 import demo.app.car.infra.exception.NonExistingSellerException;
 import demo.app.car.infra.mapper.SellerMapper;
 import demo.app.car.infra.repository.SellerRepository;
+import demo.app.car.model.SellerDTO;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

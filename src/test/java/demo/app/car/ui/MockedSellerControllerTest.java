@@ -1,9 +1,9 @@
 package demo.app.car.ui;
 
 import demo.app.car.application.SellerService;
-import demo.app.car.model.SellerDTO;
 import demo.app.car.infra.exception.DuplicateSellerException;
 import demo.app.car.infra.exception.NonExistingSellerException;
+import demo.app.car.model.SellerDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
